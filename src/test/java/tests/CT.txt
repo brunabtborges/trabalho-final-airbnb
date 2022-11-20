@@ -1,0 +1,17 @@
+PROJETO: AIRBNB
+Caso de teste: Validando retorno da busca por local e data.
+
+Pré Condição:
+Estar na home page https://www.airbnb.com.br/
+
+Massa de Dados:
+Cidade:            |     Data CheckIn:     |    Data CheckOut:    |    Hóspedes:
+Fortaleza - CE     |     12/12/2022        |    26/12/2022        |    2 Adultos e 1 Criança
+
+1 - Inserir o local de destino no campo "Onde"
+2 - Inserir data de Checkin no campo "Checkin"
+3 - Inserir data de Checkout no campo "Checkout"
+4 - Inserir quantidade de hóspedes no campo "Quem"
+5 - Clicar no botão "Buscar"
+
+Resultado esperado: Mostrar acomodações disponíveis na cidade e data informada.

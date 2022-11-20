@@ -1,9 +1,9 @@
 package pageobjects;
 
-import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import tests.Utils;
 
 
@@ -82,4 +82,33 @@ public class HomePO {
     public void validateResultsHome(){
         utils.validatePageByImage(driver,By.cssSelector("#site-content > div.fhusglq.dir.dir-ltr > div.p1lc3mon.dir.dir-ltr > div > div > div > div > section > h1 > span"));
     }
+
+    //Selecionando as datas de checkin e checkout.
+    public void selectDateCT2() throws InterruptedException {
+        utils.elementClick(driver,By.cssSelector("body > div:nth-child(7) > div > div > div:nth-child(1) > div > div > div._1unac3l > div > div > div > div > div > div > div.h1wqqi3k.dir.dir-ltr > div > div > div > div > header > div > div.cylj8v3.dir.dir-ltr > div > div > div > div.lkm6i7z.l1rzxhu2.lr5v90m.dir.dir-ltr > div > button:nth-child(4) > div"));
+        Thread.sleep(3000);
+        WebElement swapCalendar = utils.waitUntilClickable(driver,By.cssSelector("#panel--tabs--0 > div > div.dhjkeof.dir.dir-ltr > div > div > div > div > div._14676s3 > div._5neba7a > div._qz9x4fc > button > span > svg"));
+        swapCalendar.click();
+        Thread.sleep(3000);
+        WebElement dateCheckIn = utils.waitUntilClickable(driver,By.cssSelector("#panel--tabs--0 > div > div.dhjkeof.dir.dir-ltr > div > div > div > div > div._14676s3 > div._1foj6yps > div > div:nth-child(3) > div > table > tbody > tr:nth-child(2) > td:nth-child(3) > div"));
+        dateCheckIn.click();
+        WebElement dateCheckOut = utils.waitUntilClickable(driver,By.cssSelector("#panel--tabs--0 > div > div.dhjkeof.dir.dir-ltr > div > div > div > div > div._14676s3 > div._1foj6yps > div > div:nth-child(3) > div > table > tbody > tr:nth-child(3) > td._12glnvbt > div"));
+        dateCheckOut.click();
+    }
+
+    //Selecionando a quantidade de hóspedes.
+    public void selectGuestsCT2() {
+        utils.elementClick(driver,By.cssSelector("#search-tabpanel > div > div.c6ezw63.c1geg2ah.dir.dir-ltr" +
+                " > div.c2frgdd.crbzydf.dir.dir-ltr > div.b192dx2b.b174x59c.bkmyqgh.dir.dir-ltr > div > div.p1kudodg.dir.dir-ltr"));
+        utils.elementClick(driver,By.cssSelector("#stepper-adults > button:nth-child(3) > span > svg > path"));
+        }
+
+    public void validateResultsCT2(){
+        WebElement validate = driver.findElement(By.cssSelector("body > div:nth-child(7) > div > div > div:nth-child" +
+                "(1) > div > div > div._1unac3l > div > div > div > div > div > div > div.h1wqqi3k.dir.dir-lt" +
+                "r > div > div > div > div > header > div > div.cylj8v3.dir.dir-ltr > div > div > div > div.lkm6i7z.l1r" +
+                "zxhu2.lr5v90m.dir.dir-ltr > div > button:nth-child(2) > div"));
+
+        Assert.assertEquals(validate.getText(), "Insira o destino desejado","Allert esperado não foi encontrado.");
+        }
 }

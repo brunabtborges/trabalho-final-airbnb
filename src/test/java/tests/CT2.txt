@@ -1,0 +1,23 @@
+
+*NOTA: Este caso de teste é uma simulação para "induzir" um comportamento não esperado no site.
+Já que quando você faz a busca sem inserir a cidade, ele retorna acomodações de qualquer lugar.
+Nesse caso, estou simulando que o resultado esperado fosse aparecer um "Allert" com a mensagem: "Insira o destino
+desejado."
+
+PROJETO: AIRBNB
+Caso de teste negativo: Buscar uma acomodação sem inserir o local.
+
+Pré Condição:
+Estar na home page https://www.airbnb.com.br/
+
+Massa de Dados:
+Cidade:            |     Data CheckIn:     |    Data CheckOut:    |    Hóspedes:
+"Vazia"            |     10/01/2023        |    15/01/2023        |    1 Adulto
+
+1 - Deixar o campo "Onde" vazio;
+2 - Inserir data de Checkin no campo "Checkin"
+3 - Inserir data de Checkout no campo "Checkout"
+4 - Inserir quantidade de hóspedes no campo "Quem"
+5 - Clicar no botão "Buscar"
+
+Resultado esperado: Mostrar allert com a mensagem: "Insira o destino desejado".

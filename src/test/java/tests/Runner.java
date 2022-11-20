@@ -1,5 +1,6 @@
 package tests;
 
+import jdk.jshell.execution.Util;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -61,6 +62,19 @@ public class Runner {
         homePO.btnSearch();
         homePO.validateResultsHome();
         Thread.sleep(5000);
+    }
+
+    @Test(testName = "Buscar uma acomodação sem inserir o local")
+        public void searchWithoutPlace() throws InterruptedException {
+            HomePO homePO = new HomePO(driver);
+            Utils utils = new Utils();
+        homePO.closePopUp();
+        homePO.validatePageByImage();
+        homePO.selectDateCT2();
+        homePO.selectGuestsCT2();
+        Thread.sleep(2000);
+        homePO.btnSearch();
+        homePO.validateResultsCT2();
     }
 
 
